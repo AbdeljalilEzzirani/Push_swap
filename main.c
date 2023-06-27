@@ -6,71 +6,50 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:00:38 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/06/24 02:31:34 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/06/27 01:35:07 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	putstr(char *s)
-{
-	int					i;
-
-	i = 0;
-	while (s[i])
-	{
-		write (1, &s[i], 1);
-		i++;
-	}
-}
-
-int atoi(const char *str)
-{
-	int					i;
-	int					fact;
-	long				rst;
-
-	i = 0;
-	fact = 1;
-	rst = 0;
-	while ((str[i] > 8 && str[i] < 14) || str[i] == 32)
-		i++;
-	while (str[i] == '-' || (str[i] == '+'))
-	{
-		if (str[i] == '-')
-			fact = fact * (-1);
-		if (str[i + 1] == '+' || str[i + 1] == '-')
-			return (0);
-		i++;
-	}
-	while (str[i] >= 48 && str[i] <= 57)
-	{
-		rst = (rst * 10) + fact * (str[i] - 48);
-		i++;
-	}
-	return (rst);
-}
+//dst = ft_strdup(" ");
+// int parsing(char *str)
+// {
+				// k = ft_strlen(av[i]);
+				// dst = ft_strjoin(av[i], " ");
+				// dst = (char *) malloc ((k + 1) * sizeof(char));
+				// if (dst == NULL)
+				// 	return (0);
+// 	ft_strjoin(" ", str);
+// 	return (0);
+// }
 
 int	main(int ac, char **av)
 {
 	int			i;
+	char		**str;
 	int			j;
+	int			n;
+	t_list		rslt;
 
 	i = 1;
 	if (ac > 1)
 	{
 		while (av[i])
 		{
-			if (av[i])
+			str = ft_split(av[i], ' ');
+			j = ft_strlen((const char *)str);
+			printf(" atoi --> %d \n", n);
+			while (str[j])
 			{
-				ft_split(av[i], '-');
-				j = atoi(av[i]);
-				printf("%d  ", j);
+				n = atoi((char *) str[j]);
+				printf(" atoi --> %d \n", n);
+				j--;
 			}
 			i++;
 		}
 		printf("\n<< succes >> \n");
 	}
 	else
-		putstr("Error \n");
+		ft_putstr_fd("Error \n", 2);
 }
