@@ -6,47 +6,43 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:00:38 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/06/27 01:35:07 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/04 21:10:07 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//dst = ft_strdup(" ");
-// int parsing(char *str)
-// {
-				// k = ft_strlen(av[i]);
-				// dst = ft_strjoin(av[i], " ");
-				// dst = (char *) malloc ((k + 1) * sizeof(char));
-				// if (dst == NULL)
-				// 	return (0);
-// 	ft_strjoin(" ", str);
-// 	return (0);
-// }
+int	check_parsing(char *str)
+{
+	t_list		set;
+
+	set.str = ft_split(&str[set.i], ' ');
+	set.j = 0;
+	while (set.str[set.j])
+	{
+		if ((int)set.str[set.j] < 48 && (int)set.str[set.j] > 57)
+		{
+			ft_putstr_fd("ERrOr! \n", 2);
+			exit(1);
+		}
+		set.n = ft_atoi((char *) set.str[set.j]);
+		printf("---.result atoi %d \n", set.n);
+		set.j++;
+	}
+	return (0);
+}
 
 int	main(int ac, char **av)
 {
-	int			i;
-	char		**str;
-	int			j;
-	int			n;
-	t_list		rslt;
+	t_list		set;
 
-	i = 1;
+	set.i = 1;
 	if (ac > 1)
 	{
-		while (av[i])
+		while (av[set.i])
 		{
-			str = ft_split(av[i], ' ');
-			j = ft_strlen((const char *)str);
-			printf(" atoi --> %d \n", n);
-			while (str[j])
-			{
-				n = atoi((char *) str[j]);
-				printf(" atoi --> %d \n", n);
-				j--;
-			}
-			i++;
+			check_parsing(av[set.i]);
+			set.i++;
 		}
 		printf("\n<< succes >> \n");
 	}

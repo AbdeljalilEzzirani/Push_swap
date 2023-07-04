@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 19:55:01 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/06/27 00:42:41 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/04 19:32:33 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
+	int				i;
+	char			**str;
+	int				j;
+	int				n;
 }					t_list;
 
 char			**ft_split(char const *s, char c);
@@ -45,5 +49,5 @@ t_list			*ft_lstnew(int *content);
 t_list			*ft_lstlast(t_list *lst);
 t_list			*ft_lstmap(t_list *lst, void*(*f)(void *), void (*del)(void *));
 int				ft_lstsize(t_list *lst);
-
+char			*ft_strchr(const char *s, int c);
 #endif
