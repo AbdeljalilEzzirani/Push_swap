@@ -6,46 +6,91 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:00:38 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/04 21:10:07 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/10 03:56:30 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_parsing(char *str)
+void	add_number(t_ls **head, int num)
 {
-	t_list		set;
-
-	set.str = ft_split(&str[set.i], ' ');
-	set.j = 0;
-	while (set.str[set.j])
+	if ((*head) == NULL)
 	{
-		if ((int)set.str[set.j] < 48 && (int)set.str[set.j] > 57)
+		(*head) = ft_lstnew(num);
+	}
+	else
+		ft_lstadd_back(head, ft_lstnew(num));
+}
+
+int	check_sorted(t_ls *head)
+{
+	while (head->next)
+	{
+		if (head->content < head->next->content)
+			head = head->next;
+		else
+			return (0);
+	}
+	return (1);
+}
+
+int	check_duplicate(t_ls *head)
+{
+	t_ls	*tmp;
+
+	while (head)
+	{
+		tmp = head->next;
+		while (tmp)
 		{
-			ft_putstr_fd("ERrOr! \n", 2);
-			exit(1);
+			if (tmp->content == head->content)
+				return (1);
+			tmp = tmp->next;
 		}
-		set.n = ft_atoi((char *) set.str[set.j]);
-		printf("---.result atoi %d \n", set.n);
-		set.j++;
+		head = head->next;
 	}
 	return (0);
 }
 
-int	main(int ac, char **av)
+void	duplicate_sorted(t_ls *head)
 {
-	t_list		set;
+	if (check_duplicate(head) == 1)
+		ft_error();
+	if (check_sorted(head) == 1)
+		ft_error();
+}
 
-	set.i = 1;
+int	check_parsing(int ac, char **av)
+{
+	t_ls		*head;
+	t_list		var;
+
+	head = NULL;
+	var.i = 1;
 	if (ac > 1)
 	{
-		while (av[set.i])
+		while (av[var.i])
 		{
-			check_parsing(av[set.i]);
-			set.i++;
+			var.str = ft_split(av[var.i], ' ');
+			var.j = 0;
+			while (var.str[var.j])
+			{
+				if ((int)var.str[var.j] < 48 && (int)var.str[var.j] > 57)
+					ft_error();
+				add_number(&head, ft_atoi((char *) var.str[var.j]));
+				var.j++;
+			}
+			var.i++;
 		}
-		printf("\n<< succes >> \n");
 	}
 	else
-		ft_putstr_fd("Error \n", 2);
+		ft_error();
+	duplicate_sorted(head);
+	return (0);
+}
+
+
+int	main(int ac, char **av)
+{
+	check_parsing(ac, av);
 }

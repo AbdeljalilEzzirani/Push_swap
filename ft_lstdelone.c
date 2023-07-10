@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:14:44 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/06/27 00:35:54 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/10 01:00:00 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	deletecontent(void *nodes)
 	free(nodes);
 }*/
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_ls *lst, void (*del)(int))
 {
 	if (!lst || !del)
 		return ;
-	del(lst -> content);
+	del(lst->content);
 	free(lst);
 }

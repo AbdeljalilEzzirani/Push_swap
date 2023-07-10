@@ -6,13 +6,13 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 23:26:01 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/06/27 00:36:25 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/10 00:59:19 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_ls *lst)
 {
 	int					i;
 
@@ -22,7 +22,7 @@ int	ft_lstsize(t_list *lst)
 	while (lst != NULL)
 	{
 		i++;
-		lst = lst -> next;
+		lst = lst->next;
 	}
 	return (i);
 }
