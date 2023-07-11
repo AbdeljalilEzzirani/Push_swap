@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 19:55:01 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/11 00:33:03 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/12 00:11:00 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 
 typedef struct s_ls
 {
+	int				index;
+	int				count;
 	int				content;
 	struct s_ls		*next;
 }					t_ls;
