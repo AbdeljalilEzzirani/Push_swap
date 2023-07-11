@@ -6,91 +6,105 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:00:38 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/10 03:56:30 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/11 03:31:31 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	add_number(t_ls **head, int num)
+void	swap_a(t_ls *head)
 {
-	if ((*head) == NULL)
-	{
-		(*head) = ft_lstnew(num);
-	}
-	else
-		ft_lstadd_back(head, ft_lstnew(num));
+	int			tmp;
+
+	tmp = head->next->content;//
+	head->next->content = head->content;//5
+	head->content = tmp;
+	write(1, "sa\n", 3);
 }
 
-int	check_sorted(t_ls *head)
+void	rotate_a(t_ls *head)
 {
+	int		tmp;
+
+	tmp = head->content;
 	while (head->next)
 	{
-		if (head->content < head->next->content)
-			head = head->next;
-		else
-			return (0);
-	}
-	return (1);
-}
-
-int	check_duplicate(t_ls *head)
-{
-	t_ls	*tmp;
-
-	while (head)
-	{
-		tmp = head->next;
-		while (tmp)
-		{
-			if (tmp->content == head->content)
-				return (1);
-			tmp = tmp->next;
-		}
+		head->content = head->next->content;
 		head = head->next;
 	}
-	return (0);
+	head->content = tmp;
+	write(1, "ra\n", 3);
 }
 
-void	duplicate_sorted(t_ls *head)
+t_ls	*reverse_rotate_a(t_ls *head)
 {
-	if (check_duplicate(head) == 1)
-		ft_error();
-	if (check_sorted(head) == 1)
-		ft_error();
+	t_ls		*last;
+	t_ls		*ptr1;
+	t_ls		*tmp;
+
+	ptr1 = head;
+	last = ft_lstlast(head);
+	while (ptr1 && ptr1->next && ptr1->next->next != NULL)
+		ptr1 = ptr1->next;
+	tmp = head;
+	head = last;
+	head->next = tmp;
+	ptr1->next = NULL;
+	write(1, "rra\n", 4);
+	return (head);
 }
 
-int	check_parsing(int ac, char **av)
+t_ls	*sort_thre_nbr(t_ls *h)
 {
-	t_ls		*head;
-	t_list		var;
-
-	head = NULL;
-	var.i = 1;
-	if (ac > 1)
-	{
-		while (av[var.i])
-		{
-			var.str = ft_split(av[var.i], ' ');
-			var.j = 0;
-			while (var.str[var.j])
-			{
-				if ((int)var.str[var.j] < 48 && (int)var.str[var.j] > 57)
-					ft_error();
-				add_number(&head, ft_atoi((char *) var.str[var.j]));
-				var.j++;
-			}
-			var.i++;
-		}
+	if (h->content > h->next->content && h->next->content
+		< h->next->next->content && h->next->next->content > h->content)
+		swap_a(h);
+	else if (h->content > h->next->content && h->next->content
+		> h->next->next->content && h->next->next->content < h->content)
+	{	
+		swap_a(h);
+		h = reverse_rotate_a(h);
 	}
-	else
-		ft_error();
-	duplicate_sorted(head);
-	return (0);
+	else if (h->content > h->next->content && h->next->content
+		< h->next->next->content && h->next->next->content < h->content)
+		rotate_a(h);
+	else if (h->content < h->next->content && h->next->content
+		> h->next->next->content && h->next->next->content > h->content)
+	{
+		swap_a(h);
+		rotate_a(h);
+	}
+	else if (h->content < h->next->content && h->next->content
+		> h->next->next->content && h->next->next->content < h->content)
+		h = reverse_rotate_a(h);
+	return (h);
 }
 
+t_ls	*algo_sort(int ac, t_ls *head)
+{
+	if (ac == 2)
+		swap_a(head);
+	else if	(ac == 3)
+		head = sort_thre_nbr(head);
+	// else if (ac == 5)
+	// else if ()
+	// else if ()
+	return (head);
+}
 
 int	main(int ac, char **av)
 {
-	check_parsing(ac, av);
+	t_ls		*head;
+
+	if (ac == 1)
+		return (0);
+	head = check_parsing(av);
+	ac = ft_lstsize(head);
+	head = algo_sort(ac, head);
+	printf("\n\n\n\n");
+	while (head)
+	{
+		printf("node --> %d\n", head->content);
+		head = head->next;
+	}
 }
