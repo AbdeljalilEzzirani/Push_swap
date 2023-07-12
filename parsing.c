@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 19:54:06 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/11 00:22:12 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/12 07:32:09 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ t_ls	*check_parsing(char **av)
 		}
 		var.i++;
 	}
-	// printf("ac: %d\n", head->ac);
 	duplicate_sorted(head);
 	return (head);
 }

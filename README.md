@@ -28,7 +28,35 @@
 parsing	:	--------->>>>   check repeat // check_charcter // 
 
 
+// if (get_index(head_a, get_min_node(head_a)) == 0)
+// 	push_b(head_a, head_b);
+// else
+// {
+// 	while (get_index(head_a, get_min_node(head_a)) >= 2)
+// 		reverse_rotate_a(head_a);
+// 	push_b(head_a, head_b);
+// 	ac = ft_lstsize(head_a);
+// 	if (ac != 3)
+// 	{
+// 		while (get_index(head_a, get_min_node(head_a)) < 2)
+// 			rotate_a(head_a);
+// 		push_b(head_a, head_b);
+// 	}
+// }
+// sort_thre_nbr(head_a);
+// push_a(head_a, head_b);
 
+// while (head_a)
+// {
+// 	printf("node %d count --> %d\n", head_a->content, head_a->count);
+// 	head_a = head_a->next;
+// }
+// printf("\n\n\n\n");
+// while (head_b)
+// {
+// 	printf("node %d index --> %d\n", head_b->content, head_b->index);
+// 	head_b = head_b->next;
+// }
 
 
 #  -g -fsanitize=address
