@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 00:31:04 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/06/24 18:49:21 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/13 22:06:57 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,14 @@ void	ft_putstr_fd(char *s, int fd)
 		write (fd, &s[i], 1);
 		i++;
 	}
+}
+
+size_t	ft_strlen(const char *s)
+{
+	size_t				i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

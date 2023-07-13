@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_union.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 21:54:09 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/06/24 02:08:54 by abez-zir         ###   ########.fr       */
+/*   Created: 2023/07/13 22:06:39 by abez-zir          #+#    #+#             */
+/*   Updated: 2023/07/13 22:46:37 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t	ft_strlen(const char *s)
+void	sort_five_hundred(t_ls **head_a, t_ls **head_b, int ac)
 {
-	size_t				i;
+	int				chunck;
+	int				moyenne;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	chunck = ac / 10;
+	moyenne = chunck / 2;
+	get_index_min_to_max(head_a);
+	get_index_for_list(head_a);
+	chunk_job(head_a, head_b, chunck, moyenne);
+	chunk_push_a(head_a, head_b);
 }

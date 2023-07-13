@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 19:56:43 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/12 14:54:09 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:29:07 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	get_index_min_to_max(t_ls **head)
 		current = (*head);
 		while (current)
 		{
-			if (min->content > current->content)
+			if (min->contnt > current->contnt)
 				i++;
 			current = current->next;
 		}

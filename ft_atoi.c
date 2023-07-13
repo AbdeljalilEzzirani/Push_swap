@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:04:11 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/11 00:23:33 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/13 21:44:33 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	ft_error(char *str)
 {
 	ft_putstr_fd(str, 2);
-	exit(1);
+	exit(2);
 }
 
-void	check_over_flow(int nbr)
+void	check_over_flow(long nbr)
 {
 	if (nbr > 2147483647 || nbr < -2147483648)
-		ft_error("Error 10");
+		ft_error("Error\n");
 }
 
 int	ft_atoi(const char *str)

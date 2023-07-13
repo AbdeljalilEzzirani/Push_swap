@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 19:55:01 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/12 16:56:02 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/13 22:43:34 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_ls
 {
 	int				index;
 	int				count;
-	int				content;
+	int				contnt;
 	struct s_ls		*next;
 }					t_ls;
 
@@ -51,9 +51,11 @@ int			check_sorted(t_ls *head);
 void		duplicate_sorted(t_ls *head);
 t_ls		*check_parsing(char **av);
 void		add_number(t_ls **head, int num);
-
+void		chunk_push_a(t_ls **head_a, t_ls **head_b);
+void		rotate_a_rotate_b(t_ls **head_a, t_ls **head_b);
 void		swap_a(t_ls **head);
 void		rotate_a(t_ls **head);
+void		rotate_b(t_ls **head_b);
 t_ls		*reverse_rotate_a(t_ls **head);
 void		push_a(t_ls **head_a, t_ls **head_b);
 void		push_b(t_ls **head_a, t_ls **head_b);
@@ -62,6 +64,10 @@ void		get_index_min_to_max(t_ls **head);
 void		check_pos_three_nbr_push(t_ls **head_a, t_ls **head_b, int count);
 void		check_pos_four_nbr_push(t_ls **head_a, t_ls **head_b, int count);
 void		check_pos_five_nbr_push(t_ls **head_a, t_ls **head_b, int count);
+void		sort_one_hundred(t_ls **head_a, t_ls **head_b, int ac);
+void		chunk_job(t_ls **head_a, t_ls **head_b, int chunck, int moyenne);
+t_ls		*reverse_rotate_b(t_ls **head);
+void		sort_five_hundred(t_ls **head_a, t_ls **head_b, int ac);
 
 void		ft_lstadd_back(t_ls **lst, t_ls *new);
 void		ft_lstadd_front(t_ls **lst, t_ls *new);

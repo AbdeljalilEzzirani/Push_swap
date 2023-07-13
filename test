@@ -1,0 +1,43 @@
+|index: 3|      |count: 1|      |content: 5|
+|index: 7|      |count: 2|      |content: 9|
+|index: 4|      |count: 3|      |content: 6|
+|index: 8|      |count: 4|      |content: 10|
+|index: 2|      |count: 5|      |content: 1|
+|index: 5|      |count: 6|      |content: 7|
+|index: 6|      |count: 7|      |content: 8|
+|index: 1|      |count: 8|      |content: 0|
+|index: 9|      |count: 9|      |content: 11|
+|index: 10|     |count: 10|     |content: 12|
+
+|index: 9|      |count: 9|      |content: 11|
+|index: 7|      |count: 2|      |content: 9|
+|index: 5|      |count: 6|      |content: 7|
+|index: 3|      |count: 1|      |content: 5|
+|index: 1|      |count: 8|      |content: 0|
+|index: 2|      |count: 5|      |content: 1|
+|index: 4|      |count: 3|      |content: 6|
+|index: 6|      |count: 7|      |content: 8|
+|index: 8|      |count: 4|      |content: 10|
+|index: 10|     |count: 10|     |content: 12|
+
+|index: 9|      |count: 9|      |content: 11|
+|index: 7|      |count: 2|      |content: 9|
+|index: 5|      |count: 6|      |content: 7|
+|index: 3|      |count: 1|      |content: 5|
+|index: 1|      |count: 8|      |content: 0|
+|index: 2|      |count: 5|      |content: 1|
+|index: 4|      |count: 3|      |content: 6|
+|index: 6|      |count: 7|      |content: 8|
+|index: 8|      |count: 4|      |content: 10|
+|index: 10|     |count: 10|     |content: 12|
+
+
+|    12   |       11|
+|         |        9|
+|         |        7|
+|         |        5|
+|         |        0|
+|         |        1|
+|         |        6|
+|         |        8|
+|         |       10|

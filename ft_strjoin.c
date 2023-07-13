@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:43:28 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/06/24 19:05:20 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/14 00:23:00 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = ft_strlen(s2);
 	totalenergie = (i + j);
 	ptr = (char *) malloc ((totalenergie + 1) * sizeof(char));
+		printf("strjoin --> %p\n", ptr);
+	printf("%p\n", ptr);
+
 	if (ptr == NULL)
 		return (NULL);
 	return (diir_chii_fchiii((char *)s1, (char *)s2, ptr));

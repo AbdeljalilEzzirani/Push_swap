@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (len > j)
 		len = j - start;
 	p = (char *) malloc (sizeof(char) * len + 1);
+		printf("substr ---> %p\n", p);
+
 	if (p == NULL)
 		return (NULL);
 	while (i < len && s[start])

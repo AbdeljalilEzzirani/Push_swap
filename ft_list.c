@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 20:08:48 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/11 21:48:52 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/14 00:21:45 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	add_number(t_ls **head, int num)
 {
 	if ((*head) == NULL)
-	{
 		(*head) = ft_lstnew(num);
-	}
 	else
 		ft_lstadd_back(head, ft_lstnew(num));
 }
@@ -27,9 +25,10 @@ t_ls	*ft_lstnew(int content)
 	t_ls					*node;
 
 	node = (t_ls *) malloc(sizeof(t_ls));
+	printf("lst--new %p\n", node);
 	if (node == NULL)
 		return (NULL);
-	node->content = content;
+	node->contnt = content;
 	node->next = NULL;
 	return (node);
 }

@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 17:23:47 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/06/24 02:08:47 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/14 00:22:06 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strdup(const char *s1)
 		return (NULL);
 	size = ft_strlen(s1);
 	p = (char *) malloc (sizeof(char) * size + 1);
+		printf("strdup ---> %p\n", p);
+
 	if (p == NULL)
 		return (NULL);
 	ft_memcpy(p, s1, size);

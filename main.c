@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:00:38 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/12 17:15:14 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/14 00:42:17 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 t_ls	*sort_thre_nbr(t_ls **h)
 {
-	if ((*h)->content > (*h)->next->content && (*h)->next->content
-		< (*h)->next->next->content && (*h)->next->next->content > (*h)->content)
+	if ((*h)->contnt > (*h)->next->contnt && (*h)->next->contnt
+		< (*h)->next->next->contnt && (*h)->next->next->contnt > (*h)->contnt)
 		swap_a(h);
-	else if ((*h)->content > (*h)->next->content && (*h)->next->content
-		> (*h)->next->next->content && (*h)->next->next->content < (*h)->content)
+	else if ((*h)->contnt > (*h)->next->contnt && (*h)->next->contnt
+		> (*h)->next->next->contnt && (*h)->next->next->contnt < (*h)->contnt)
 	{	
 		swap_a(h);
 		(*h) = reverse_rotate_a(h);
 	}
-	else if ((*h)->content > (*h)->next->content && (*h)->next->content
-		< (*h)->next->next->content && (*h)->next->next->content < (*h)->content)
+	else if ((*h)->contnt > (*h)->next->contnt && (*h)->next->contnt
+		< (*h)->next->next->contnt && (*h)->next->next->contnt < (*h)->contnt)
 		rotate_a(h);
-	else if ((*h)->content < (*h)->next->content && (*h)->next->content
-		> (*h)->next->next->content && (*h)->next->next->content > (*h)->content)
+	else if ((*h)->contnt < (*h)->next->contnt && (*h)->next->contnt
+		> (*h)->next->next->contnt && (*h)->next->next->contnt > (*h)->contnt)
 	{
 		swap_a(h);
 		rotate_a(h);
 	}
-	else if ((*h)->content < (*h)->next->content && (*h)->next->content
-		> (*h)->next->next->content && (*h)->next->next->content < (*h)->content)
+	else if ((*h)->contnt < (*h)->next->contnt && (*h)->next->contnt
+		> (*h)->next->next->contnt && (*h)->next->next->contnt < (*h)->contnt)
 		(*h) = reverse_rotate_a(h);
 	return (*h);
 }
@@ -96,6 +96,12 @@ void	sort_five_nbr(t_ls **head_a, t_ls **head_b, int ac)
 
 t_ls	*algo_sort(t_ls **head_a, t_ls **head_b, int ac)
 {
+	// t_ls *tmp = (*head_a);
+	// while (tmp)
+	// {
+	// 	printf("num : %d | index : %d | rank : %d\n", tmp->contnt, tmp->count, tmp->index);
+	// 	tmp = tmp->next;
+	// }
 	if (ac == 2)
 		swap_a(head_a);
 	else if (ac == 3)
@@ -104,6 +110,10 @@ t_ls	*algo_sort(t_ls **head_a, t_ls **head_b, int ac)
 		sort_four_nbr(head_a, head_b, ac);
 	else if (ac == 5)
 		sort_five_nbr(head_a, head_b, ac);
+	else if (ac <= 100)
+		sort_one_hundred(head_a, head_b, ac);
+	else if (ac <= 500)
+		sort_five_hundred(head_a, head_b, ac);
 	return ((*head_a));
 }
 
@@ -111,6 +121,8 @@ int	main(int ac, char **av)
 {
 	t_ls		*head_a;
 	t_ls		*head_b;
+	t_ls		*tmp;
+	
 
 	if (ac == 1)
 		return (0);
@@ -119,15 +131,25 @@ int	main(int ac, char **av)
 	ac = ft_lstsize(head_a);
 	head_b = NULL;
 	head_a = algo_sort(&head_a, &head_b, ac);
+	while (head_a)
+	{
+		tmp = head_a->next;
+		printf("%d\n",head_a->contnt);
+		free(head_a);
+		head_a = tmp;
+	}
+	// free (head_b);
 	// while (head_a)
 	// {
-	// 	printf("head_a node --> %d\n", head_a->content);
+	// 	printf("%d --> %d \n", head_a->contnt, head_a->index);
 	// 	head_a = head_a->next;
 	// }
-	// printf ("\n\n\n\n");
-	// while (head_b)
+	// printf ("\n\n");
+	// while (head_a)
 	// {
-	// 	printf("head_b node --> %d\n", head_b->content);
-	// 	head_b = head_b->next;
+	// 	printf("head_a node --> %d\n", head_a->contnt);
+	// 	head_a = head_a->next;
 	// }
+	//free_list
+	// while(1);
 }

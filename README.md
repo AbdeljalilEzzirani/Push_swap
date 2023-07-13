@@ -83,3 +83,31 @@ parsing	:	--------->>>>   check repeat // check_charcter //
 		// 		exit(1);
 		// 	}
 		// }
+
+<!-- 
+		sort_one_hundred{
+	int	i;
+	int	size;
+
+	i = 0;
+	if (!(*a) || !len)
+		return ;
+	size = (len + d) / 2;
+	while ((*a) && d < len)
+	{
+		if ((*a)->pos < len)
+		{
+			push_b(b, a);
+			if ((*b) && ((*b)->pos <= size))
+			{
+				if ((*a) && !((*a)->pos < len))
+					rr(b, a);
+				else
+					rb(b);
+			}
+			d++;
+		}
+		else
+			ra(a);
+	}
+} -->
