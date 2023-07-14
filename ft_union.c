@@ -6,11 +6,38 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 22:06:39 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/13 22:46:37 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/14 12:53:57 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char							*p;
+	size_t							i;
+	size_t							j;
+
+	i = 0;
+	if (s == NULL)
+		return (NULL);
+	j = ft_strlen(s);
+	if (start >= j)
+		return (ft_strdup(""));
+	if (len > j)
+		len = j - start;
+	p = (char *) malloc (sizeof(char) * len + 1);
+	if (p == NULL)
+		return (NULL);
+	while (i < len && s[start])
+	{
+		p[i] = s[start];
+		start++;
+		i++;
+	}
+	p[i] = '\0';
+	return (p);
+}
 
 void	sort_five_hundred(t_ls **head_a, t_ls **head_b, int ac)
 {
@@ -23,4 +50,36 @@ void	sort_five_hundred(t_ls **head_a, t_ls **head_b, int ac)
 	get_index_for_list(head_a);
 	chunk_job(head_a, head_b, chunck, moyenne);
 	chunk_push_a(head_a, head_b);
+}
+
+int	ft_lstsize(t_ls *lst)
+{
+	int					i;
+
+	if (!lst)
+		return (0);
+	i = 0;
+	while (lst != NULL)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return (i);
+}
+
+int	get_max(t_ls **head)
+{
+	t_ls		*max;
+	t_ls		*tmp;
+
+	get_index_for_list(head);
+	tmp = (*head);
+	max = (*head);
+	while (tmp)
+	{
+		if (tmp->contnt > max->contnt)
+			max = tmp;
+		tmp = tmp->next;
+	}
+	return (max->count);
 }

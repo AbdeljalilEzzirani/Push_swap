@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 20:08:48 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/14 00:21:45 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/14 08:25:23 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ t_ls	*ft_lstnew(int content)
 	t_ls					*node;
 
 	node = (t_ls *) malloc(sizeof(t_ls));
-	printf("lst--new %p\n", node);
 	if (node == NULL)
 		return (NULL);
 	node->contnt = content;
@@ -57,19 +56,4 @@ t_ls	*ft_lstlast(t_ls *lst)
 	while (lst->next != NULL)
 		lst = lst -> next;
 	return (lst);
-}
-
-int	ft_lstsize(t_ls *lst)
-{
-	int					i;
-
-	if (!lst)
-		return (0);
-	i = 0;
-	while (lst != NULL)
-	{
-		i++;
-		lst = lst->next;
-	}
-	return (i);
 }

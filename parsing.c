@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 19:54:06 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/14 00:40:15 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/14 09:17:50 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	check_duplicate(t_ls *head)
 void	duplicate_sorted(t_ls *head)
 {
 	if (check_duplicate(head) == 1)
-		ft_error("Error 4");
+		ft_error("Error\n");
 	if (check_sorted(head) == 1)
 		exit(0);
 }
@@ -80,7 +80,7 @@ t_ls	*check_parsing(char **av)
 			if ((int)var.str[var.j] < 48 && (int)var.str[var.j] > 57)
 			{
 				free_strr(var.str);
-				ft_error("Error 5");
+				ft_error("Error\n");
 			}
 			add_number(&head, ft_atoi((char *) var.str[var.j]));
 			free(var.str[var.j]);

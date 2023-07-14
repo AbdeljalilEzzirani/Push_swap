@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 19:56:43 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/13 17:29:07 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/14 10:37:52 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,21 @@ void	get_index_min_to_max(t_ls **head)
 		}
 		min->index = i;
 		min = min->next;
+	}
+}
+
+void	get_index_for_list(t_ls **head_a)
+{
+	int			i;
+	t_ls		*tmp;
+
+	i = 1;
+	tmp = (*head_a);
+	while (tmp)
+	{
+		tmp->count = i;
+		i++;
+		tmp = tmp->next;
 	}
 }
 
@@ -81,20 +96,5 @@ void	check_pos_five_nbr_push(t_ls **head_a, t_ls **head_b, int count)
 	{
 		reverse_rotate_a(head_a);
 		push_b(head_a, head_b);
-	}
-}
-
-void	get_index_for_list(t_ls **head_a)
-{
-	int			i;
-	t_ls		*tmp;
-
-	i = 1;
-	tmp = (*head_a);
-	while (tmp)
-	{
-		tmp->count = i;
-		i++;
-		tmp = tmp->next;
 	}
 }

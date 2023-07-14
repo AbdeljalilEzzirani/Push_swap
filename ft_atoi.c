@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:04:11 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/13 21:44:33 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/14 09:17:34 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,17 @@ int	ft_atoi(const char *str)
 	if (str[i] == '-' || (str[i] == '+'))
 	{
 		if (!str[i + 1])
-			ft_error("Error 1");
+			ft_error("Error\n");
 		if (str[i] == '-')
 			fact = fact * (-1);
 		if ((str[i + 1] == '+' || str[i + 1] == '-'))
-			ft_error("Error 2");
+			ft_error("Error\n");
 		i++;
 	}
 	while (str[i] >= 48 && str[i] <= 57)
 		rst = (rst * 10) + fact * (str[i++] - 48);
 	if (str[i] && !(str[i] >= 48 && str[i] <= 57))
-		ft_error("Error 3");
+		ft_error("Error\n");
 	check_over_flow(rst);
 	return (rst);
 }
