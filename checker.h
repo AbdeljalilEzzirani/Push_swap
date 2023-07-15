@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 19:55:01 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 03:33:35 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 14:25:04 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void		_check_strccmp_(t_ls **stack_a, t_ls **stack_b, char *input);
 void		check_strccmp(t_ls **stack_a, t_ls **stack_b, char *input);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 
-
 char		*ft_strchr(const char *s, int c);
 char		**ft_split(char const *s, char c);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
@@ -94,8 +93,12 @@ t_ls		*ft_lstnew(int content);
 t_ls		*ft_lstlast(t_ls *lst);
 int			ft_lstsize(t_ls *lst);
 
-void rrr(t_ls **stack_a, t_ls **stack_b);
-void swap_a_swap_b(t_ls **stack_a, t_ls **stack_b);
-void rotate_a_rotate_b(t_ls **head_a, t_ls **head_b);
+void		rrr(t_ls **stack_a, t_ls **stack_b);
+void		swap_a_swap_b(t_ls **stack_a, t_ls **stack_b);
+void		rotate_a_rotate_b(t_ls **head_a, t_ls **head_b);
+
+void		check_arg_in(char str);
+void		check_arg(char *arg);
+char		**free_str_error(char **string);
 
 #endif

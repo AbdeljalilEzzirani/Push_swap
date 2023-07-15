@@ -6,36 +6,41 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:00:38 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 03:40:47 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 14:11:35 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
 
-t_ls *sort_thre_nbr(t_ls **h)
+t_ls	*sort_thre_nbr(t_ls **h)
 {
-	if ((*h)->contnt > (*h)->next->contnt && (*h)->next->contnt < (*h)->next->next->contnt && (*h)->next->next->contnt > (*h)->contnt)
+	if ((*h)->contnt > (*h)->next->contnt && (*h)->next->contnt
+		< (*h)->next->next->contnt && (*h)->next->next->contnt > (*h)->contnt)
 		swap_a(h);
-	else if ((*h)->contnt > (*h)->next->contnt && (*h)->next->contnt > (*h)->next->next->contnt && (*h)->next->next->contnt < (*h)->contnt)
+	else if ((*h)->contnt > (*h)->next->contnt && (*h)->next->contnt
+		> (*h)->next->next->contnt && (*h)->next->next->contnt < (*h)->contnt)
 	{
 		swap_a(h);
 		(*h) = reverse_rotate_a(h);
 	}
-	else if ((*h)->contnt > (*h)->next->contnt && (*h)->next->contnt < (*h)->next->next->contnt && (*h)->next->next->contnt < (*h)->contnt)
+	else if ((*h)->contnt > (*h)->next->contnt && (*h)->next->contnt
+		< (*h)->next->next->contnt && (*h)->next->next->contnt < (*h)->contnt)
 		rotate_a(h);
-	else if ((*h)->contnt < (*h)->next->contnt && (*h)->next->contnt > (*h)->next->next->contnt && (*h)->next->next->contnt > (*h)->contnt)
+	else if ((*h)->contnt < (*h)->next->contnt && (*h)->next->contnt
+		> (*h)->next->next->contnt && (*h)->next->next->contnt > (*h)->contnt)
 	{
 		swap_a(h);
 		rotate_a(h);
 	}
-	else if ((*h)->contnt < (*h)->next->contnt && (*h)->next->contnt > (*h)->next->next->contnt && (*h)->next->next->contnt < (*h)->contnt)
+	else if ((*h)->contnt < (*h)->next->contnt && (*h)->next->contnt
+		> (*h)->next->next->contnt && (*h)->next->next->contnt < (*h)->contnt)
 		(*h) = reverse_rotate_a(h);
 	return (*h);
 }
 
-void sort_four_nbr(t_ls **head_a, t_ls **head_b, int ac)
+void	sort_four_nbr(t_ls **head_a, t_ls **head_b, int ac)
 {
-	t_ls *ptr;
+	t_ls			*ptr;
 
 	(void)ac;
 	get_index_min_to_max(head_a);
@@ -48,15 +53,15 @@ void sort_four_nbr(t_ls **head_a, t_ls **head_b, int ac)
 			check_pos_three_nbr_push(head_a, head_b, ptr->count);
 			sort_thre_nbr(head_a);
 			push_a(head_a, head_b);
-			return;
+			return ;
 		}
 		ptr = ptr->next;
 	}
 }
 
-void sort_five_nbr(t_ls **head_a, t_ls **head_b, int ac)
+void	sort_five_nbr(t_ls **head_a, t_ls **head_b, int ac)
 {
-	t_ls *ptr;
+	t_ls			*ptr;
 
 	(void)ac;
 	get_index_min_to_max(head_a);
@@ -69,27 +74,10 @@ void sort_five_nbr(t_ls **head_a, t_ls **head_b, int ac)
 			check_pos_five_nbr_push(head_a, head_b, ptr->count);
 			sort_four_nbr(head_a, head_b, ac);
 			push_a(head_a, head_b);
-			return;
+			return ;
 		}
 		ptr = ptr->next;
 	}
-}
-
-t_ls *algo_sort(t_ls **head_a, t_ls **head_b, int ac)
-{
-	if (ac == 2)
-		swap_a(head_a);
-	else if (ac == 3)
-		(*head_a) = sort_thre_nbr(head_a);
-	else if (ac == 4)
-		sort_four_nbr(head_a, head_b, ac);
-	else if (ac == 5)
-		sort_five_nbr(head_a, head_b, ac);
-	else if (ac <= 100)
-		sort_one_hundred(head_a, head_b, ac);
-	else if (ac <= 500)
-		sort_five_hundred(head_a, head_b, ac);
-	return ((*head_a));
 }
 
 void	check_strccmp(t_ls **stack_a, t_ls **stack_b, char *input)
@@ -120,7 +108,6 @@ void	check_strccmp(t_ls **stack_a, t_ls **stack_b, char *input)
 		ft_error("Error\n");
 }
 
-
 int	main(int ac, char **av)
 {
 	t_ls		*head_a;
@@ -145,4 +132,3 @@ int	main(int ac, char **av)
 		write(1, "KO\n", 3);
 	return (0);
 }
-

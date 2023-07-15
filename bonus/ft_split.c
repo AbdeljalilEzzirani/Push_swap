@@ -6,16 +6,16 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:49:20 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 00:22:06 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 13:47:48 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
 
-static int count_nbr_case_in_tab(char const *s, char c)
+static int	count_nbr_case_in_tab(char const *s, char c)
 {
-	int nbr;
-	int i;
+	int			nbr;
+	int			i;
 
 	i = 0;
 	nbr = 0;
@@ -33,9 +33,9 @@ static int count_nbr_case_in_tab(char const *s, char c)
 	return (nbr);
 }
 
-static void free_tab(char **s)
+static void	free_tab(char **s)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	while (s[i])
@@ -46,11 +46,11 @@ static void free_tab(char **s)
 	free(s);
 }
 
-static char **ft_lkhedma(const char *s, char **tab, int nbr, char c)
+static char	**ft_lkhedma(const char *s, char **tab, int nbr, char c)
 {
-	int i;
-	int j;
-	int swap;
+	int				i;
+	int				j;
+	int				swap;
 
 	i = 0;
 	j = 0;
@@ -73,10 +73,10 @@ static char **ft_lkhedma(const char *s, char **tab, int nbr, char c)
 	return (tab);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **tab;
-	int nbr;
+	char		**tab;
+	int			nbr;
 
 	if (!s)
 	{

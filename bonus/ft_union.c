@@ -6,17 +6,17 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 22:06:39 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 00:22:06 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 13:48:24 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *p;
-	size_t i;
-	size_t j;
+	char			*p;
+	size_t			i;
+	size_t			j;
 
 	i = 0;
 	if (s == NULL)
@@ -39,10 +39,10 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	return (p);
 }
 
-void sort_five_hundred(t_ls **head_a, t_ls **head_b, int ac)
+void	sort_five_hundred(t_ls **head_a, t_ls **head_b, int ac)
 {
-	int chunck;
-	int moyenne;
+	int			chunck;
+	int			moyenne;
 
 	chunck = ac / 10;
 	moyenne = chunck / 2;
@@ -52,9 +52,9 @@ void sort_five_hundred(t_ls **head_a, t_ls **head_b, int ac)
 	chunk_push_a(head_a, head_b);
 }
 
-int ft_lstsize(t_ls *lst)
+int	ft_lstsize(t_ls *lst)
 {
-	int i;
+	int			i;
 
 	if (!lst)
 		return (0);

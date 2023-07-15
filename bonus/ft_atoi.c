@@ -6,29 +6,29 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:04:11 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 00:22:05 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 13:45:07 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
 
-void ft_error(char *str)
+void	ft_error(char *str)
 {
 	ft_putstr_fd(str, 2);
 	exit(2);
 }
 
-void check_over_flow(long nbr)
+void	check_over_flow(long nbr)
 {
 	if (nbr > 2147483647 || nbr < -2147483648)
 		ft_error("Error\n");
 }
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int i;
-	int fact;
-	long rst;
+	int			i;
+	int			fact;
+	long		rst;
 
 	i = 0;
 	fact = 1;

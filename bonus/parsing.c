@@ -6,13 +6,13 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 19:54:06 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 02:00:48 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 14:10:11 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
 
-int check_sorted(t_ls *head)
+int	check_sorted(t_ls *head)
 {
 	while (head->next)
 	{
@@ -24,9 +24,9 @@ int check_sorted(t_ls *head)
 	return (1);
 }
 
-int check_duplicate(t_ls *head)
+int	check_duplicate(t_ls *head)
 {
-	t_ls *tmp;
+	t_ls			*tmp;
 
 	while (head->next)
 	{
@@ -42,15 +42,15 @@ int check_duplicate(t_ls *head)
 	return (0);
 }
 
-void duplicate_sorted(t_ls *head)
+void	duplicate_sorted(t_ls *head)
 {
 	if (check_duplicate(head) == 1)
 		ft_error("Error\n");
 }
 
-char **free_strr(char **string)
+char	**free_strr(char **string)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	while (string[i])
@@ -62,20 +62,10 @@ char **free_strr(char **string)
 	return (NULL);
 }
 
-void	check_arg(char *arg)
+t_ls	*check_parsing(char **av)
 {
-	if (ft_strlen(arg) > ft_strlen("+2147483647"))
-	{
-		write(1, "Error\n", 6);
-		exit(1);
-	}
-}
-
-t_ls *check_parsing(char **av)
-{
-	t_ls *head;
-	t_list var;
-	int i = 0;
+	t_ls			*head;
+	t_list			var;
 
 	head = NULL;
 	var.i = 1;
@@ -83,18 +73,11 @@ t_ls *check_parsing(char **av)
 	{
 		var.str = ft_split(av[var.i], ' ');
 		var.j = 0;
-		while (var.str[i])
-		{
-			check_arg(var.str[i]);
-			i++;
-		}
+		check_arg_in(var.str);
 		while (var.str[var.j])
 		{
 			if ((int)var.str[var.j] < 48 && (int)var.str[var.j] > 57)
-			{
-				free_strr(var.str);
-				ft_error("Error\n");
-			}
+				free_str_error(var.str);
 			add_number(&head, ft_atoi((char *)var.str[var.j]));
 			free(var.str[var.j]);
 			var.j++;

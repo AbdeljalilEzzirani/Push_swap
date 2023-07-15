@@ -6,15 +6,15 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 00:31:04 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 00:22:06 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 13:47:03 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
+	int				i;
 
 	i = 0;
 	while (s[i])
@@ -24,9 +24,9 @@ void ft_putstr_fd(char *s, int fd)
 	}
 }
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t			i;
 
 	i = 0;
 	while (s[i])
@@ -34,11 +34,11 @@ size_t ft_strlen(const char *s)
 	return (i);
 }
 
-void *ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t i;
-	char *d;
-	const char *s;
+	size_t			i;
+	char			*d;
+	const char		*s;
 
 	i = 0;
 	s = src;
@@ -53,9 +53,9 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
 	return (d);
 }
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int			i;
 
 	if (s == NULL)
 		return (NULL);
@@ -71,10 +71,10 @@ char *ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-char *ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
-	char *p;
-	int size;
+	char			*p;
+	int				size;
 
 	if (s1 == NULL)
 		return (NULL);

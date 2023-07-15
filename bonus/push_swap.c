@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 21:12:20 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 03:32:34 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 14:12:53 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	swap_a(t_ls **head)
 	(*head)->contnt = tmp;
 }
 
-void swap_a_swap_b(t_ls **stack_a, t_ls **stack_b)
+void	swap_a_swap_b(t_ls **stack_a, t_ls **stack_b)
 {
 	swap_a(stack_a);
 	swap_a(stack_b);
@@ -67,32 +67,8 @@ t_ls	*reverse_rotate_b(t_ls **head)
 	return ((*head));
 }
 
-void rrr(t_ls **stack_a, t_ls **stack_b)
+void	rrr(t_ls **stack_a, t_ls **stack_b)
 {
 	reverse_rotate_a(stack_a);
 	reverse_rotate_b(stack_b);
-}
-
-void	push_a(t_ls **head_a, t_ls **head_b)
-{
-	t_ls			*tmp;
-
-	if (!(*head_b))
-		return ;
-	tmp = (*head_b);
-	(*head_b) = (*head_b)->next;
-	tmp->next = (*head_a);
-	(*head_a) = tmp;
-}
-
-void	push_b(t_ls **head_a, t_ls **head_b)
-{
-	t_ls			*tmp;
-
-	if (!(*head_a))
-		return ;
-	tmp = (*head_a);
-	(*head_a) = (*head_a)->next;
-	tmp->next = (*head_b);
-	(*head_b) = tmp;
 }

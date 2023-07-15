@@ -6,13 +6,13 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 19:56:38 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 00:22:06 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 14:14:27 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
 
-int assoocie(t_ls *head_a, int chunk)
+int	assoocie(t_ls *head_a, int chunk)
 {
 	while (head_a)
 	{
@@ -23,9 +23,9 @@ int assoocie(t_ls *head_a, int chunk)
 	return (0);
 }
 
-int get_pos(t_ls *head_b, int index)
+int	get_pos(t_ls *head_b, int index)
 {
-	int i;
+	int				i;
 
 	i = 0;
 	while (head_b)
@@ -38,10 +38,10 @@ int get_pos(t_ls *head_b, int index)
 	return (0);
 }
 
-void sort_one_hundred(t_ls **head_a, t_ls **head_b, int ac)
+void	sort_one_hundred(t_ls **head_a, t_ls **head_b, int ac)
 {
-	int chunck;
-	int moyenne;
+	int			chunck;
+	int			moyenne;
 
 	chunck = ac / 5;
 	moyenne = chunck / 2;
@@ -51,9 +51,9 @@ void sort_one_hundred(t_ls **head_a, t_ls **head_b, int ac)
 	chunk_push_a(head_a, head_b);
 }
 
-void chunk_push_a(t_ls **head_a, t_ls **head_b)
+void	chunk_push_a(t_ls **head_a, t_ls **head_b)
 {
-	int size_list;
+	int			size_list;
 
 	size_list = ft_lstsize(*head_b);
 	while (*head_b)
@@ -76,9 +76,9 @@ void chunk_push_a(t_ls **head_a, t_ls **head_b)
 	}
 }
 
-void chunk_job(t_ls **head_a, t_ls **head_b, int chunck, int moyenne)
+void	chunk_job(t_ls **head_a, t_ls **head_b, int chunck, int moyenne)
 {
-	int fix;
+	int				fix;
 
 	fix = chunck;
 	while ((*head_a))
