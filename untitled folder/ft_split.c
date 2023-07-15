@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:49:20 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/14 00:41:32 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/14 17:19:43 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,13 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 	{
-		ft_putstr_fd("_-_-_>>>>ERROR\n", 2);
+		ft_putstr_fd("Error\n", 2);
 		exit(1);
 	}
 	nbr = count_nbr_case_in_tab(s, c);
 	if (nbr == 0)
 	{
-		ft_putstr_fd("*******ERROR\n", 2);
+		ft_putstr_fd("Error\n", 2);
 		exit(1);
 	}
 	tab = (char **) malloc(sizeof(char *) * (nbr + 1));

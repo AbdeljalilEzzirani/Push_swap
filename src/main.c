@@ -6,11 +6,11 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:00:38 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/14 12:58:20 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 00:24:18 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 t_ls	*sort_thre_nbr(t_ls **h)
 {
@@ -109,4 +109,9 @@ int	main(int ac, char **av)
 	ac = ft_lstsize(head_a);
 	head_b = NULL;
 	head_a = algo_sort(&head_a, &head_b, ac);
+	while (head_a)
+	{
+		free(head_a);
+		head_a = head_a -> next;
+	}
 }

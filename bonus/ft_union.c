@@ -6,17 +6,17 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 22:06:39 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/14 12:53:57 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 00:22:06 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../checker.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char							*p;
-	size_t							i;
-	size_t							j;
+	char *p;
+	size_t i;
+	size_t j;
 
 	i = 0;
 	if (s == NULL)
@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (len > j)
 		len = j - start;
-	p = (char *) malloc (sizeof(char) * len + 1);
+	p = (char *)malloc(sizeof(char) * len + 1);
 	if (p == NULL)
 		return (NULL);
 	while (i < len && s[start])
@@ -39,10 +39,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (p);
 }
 
-void	sort_five_hundred(t_ls **head_a, t_ls **head_b, int ac)
+void sort_five_hundred(t_ls **head_a, t_ls **head_b, int ac)
 {
-	int				chunck;
-	int				moyenne;
+	int chunck;
+	int moyenne;
 
 	chunck = ac / 10;
 	moyenne = chunck / 2;
@@ -52,9 +52,9 @@ void	sort_five_hundred(t_ls **head_a, t_ls **head_b, int ac)
 	chunk_push_a(head_a, head_b);
 }
 
-int	ft_lstsize(t_ls *lst)
+int ft_lstsize(t_ls *lst)
 {
-	int					i;
+	int i;
 
 	if (!lst)
 		return (0);
@@ -65,21 +65,4 @@ int	ft_lstsize(t_ls *lst)
 		lst = lst->next;
 	}
 	return (i);
-}
-
-int	get_max(t_ls **head)
-{
-	t_ls		*max;
-	t_ls		*tmp;
-
-	get_index_for_list(head);
-	tmp = (*head);
-	max = (*head);
-	while (tmp)
-	{
-		if (tmp->contnt > max->contnt)
-			max = tmp;
-		tmp = tmp->next;
-	}
-	return (max->count);
 }
