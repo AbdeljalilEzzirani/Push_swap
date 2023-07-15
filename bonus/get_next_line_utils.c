@@ -6,11 +6,11 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 23:40:55 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 00:57:55 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 03:01:28 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../checker.h"
 
 static char	*join(char *one, char *two, char *swap)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abez-zir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 21:09:14 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/03/18 22:29:15 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 03:01:02 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../checker.h"
 
 int	ft_find_slash_n(char *str)
 {

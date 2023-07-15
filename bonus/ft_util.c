@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 08:29:42 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 01:04:47 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 03:33:24 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void rotate_a_rotate_b(t_ls **head_a, t_ls **head_b)
 {
 	rotate_a(head_a);
-	rotate_a(head_b);
+	rotate_b(head_b);
 }
 
 void rotate_a(t_ls **head_a)

@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:00:38 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 01:22:45 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 03:40:47 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,17 @@ t_ls *algo_sort(t_ls **head_a, t_ls **head_b, int ac)
 
 void	check_strccmp(t_ls **stack_a, t_ls **stack_b, char *input)
 {
-	_check_strccmp_(stack_a, stack_b, input);
-	if (ft_strncmp(input, "sa\n", 2) == 0)
+	if (ft_strncmp(input, "rra\n", 3) == 0)
+		reverse_rotate_a(stack_a);
+	else if (ft_strncmp(input, "rrb\n", 3) == 0)
+		reverse_rotate_b(stack_b);
+	else if (ft_strncmp(input, "ss\n", 2) == 0)
+		swap_a_swap_b(stack_a, stack_b);
+	else if (ft_strncmp(input, "rrr\n", 3) == 0)
+		rrr(stack_a, stack_b);
+	else if (ft_strncmp(input, "rr\n", 2) == 0)
+		rotate_a_rotate_b(stack_a, stack_b);
+	else if (ft_strncmp(input, "sa\n", 2) == 0)
 		swap_a(stack_a);
 	else if (ft_strncmp(input, "sb\n", 2) == 0)
 		swap_a(stack_b);
@@ -108,34 +117,9 @@ void	check_strccmp(t_ls **stack_a, t_ls **stack_b, char *input)
 	else if (ft_strncmp(input, "rb\n", 2) == 0)
 		rotate_b(stack_b);
 	else
-	{
-		write(2, "Error\n", 6);
-		exit (1);
-	}
+		ft_error("Error\n");
 }
 
-void	_check_strccmp_(t_ls **stack_a, t_ls **stack_b, char *input)
-{
-	if (ft_strncmp(input, "rra\n", 3) == 0)
-		reverse_rotate_a(stack_a);
-	else if (ft_strncmp(input, "rrb\n", 3) == 0)
-		reverse_rotate_b(stack_b);
-	else if (ft_strncmp(input, "ss\n", 2) == 0)
-	{
-		swap_a(stack_a);
-		swap_a(stack_b);
-	}
-	else if (ft_strncmp(input, "rrr\n", 3) == 0)
-	{
-		reverse_rotate_a(stack_a);
-		reverse_rotate_b(stack_b);
-	}
-	else if (ft_strncmp(input, "rr\n", 2) == 0)
-	{
-		rotate_a(stack_a);
-		rotate_b(stack_b);
-	}
-}
 
 int	main(int ac, char **av)
 {
@@ -153,6 +137,7 @@ int	main(int ac, char **av)
 		if (!input)
 			break ;
 		check_strccmp(&head_a, &head_b, input);
+		free(input);
 	}
 	if (head_b == NULL && check_sorted(head_a))
 		write(1, "OK\n", 3);

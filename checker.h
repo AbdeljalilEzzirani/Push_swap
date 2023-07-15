@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 19:55:01 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 01:35:41 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 03:33:35 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,12 @@ void		add_number(t_ls **head, int num);
 void		chunk_push_a(t_ls **head_a, t_ls **head_b);
 int			get_max(t_ls **head);
 
-t_ls		rotate_a_rotate_b(t_ls **head_a, t_ls **head_b);
+void		rotate_a_rotate_b(t_ls **head_a, t_ls **head_b);
 void		swap_a(t_ls **head);
 void		rotate_a(t_ls **head);
 void		rotate_b(t_ls **head_b);
 t_ls		*reverse_rotate_a(t_ls **head);
+t_ls		*reverse_rotate_b(t_ls **head);
 
 void		push_a(t_ls **head_a, t_ls **head_b);
 void		push_b(t_ls **head_a, t_ls **head_b);
@@ -92,5 +93,9 @@ void		ft_lstadd_front(t_ls **lst, t_ls *new);
 t_ls		*ft_lstnew(int content);
 t_ls		*ft_lstlast(t_ls *lst);
 int			ft_lstsize(t_ls *lst);
+
+void rrr(t_ls **stack_a, t_ls **stack_b);
+void swap_a_swap_b(t_ls **stack_a, t_ls **stack_b);
+void rotate_a_rotate_b(t_ls **head_a, t_ls **head_b);
 
 #endif
