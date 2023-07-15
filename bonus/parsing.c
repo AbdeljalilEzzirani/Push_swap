@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 19:54:06 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 01:06:18 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 02:00:48 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,20 @@ char **free_strr(char **string)
 	return (NULL);
 }
 
+void	check_arg(char *arg)
+{
+	if (ft_strlen(arg) > ft_strlen("+2147483647"))
+	{
+		write(1, "Error\n", 6);
+		exit(1);
+	}
+}
+
 t_ls *check_parsing(char **av)
 {
 	t_ls *head;
 	t_list var;
+	int i = 0;
 
 	head = NULL;
 	var.i = 1;
@@ -73,6 +83,11 @@ t_ls *check_parsing(char **av)
 	{
 		var.str = ft_split(av[var.i], ' ');
 		var.j = 0;
+		while (var.str[i])
+		{
+			check_arg(var.str[i]);
+			i++;
+		}
 		while (var.str[var.j])
 		{
 			if ((int)var.str[var.j] < 48 && (int)var.str[var.j] > 57)
