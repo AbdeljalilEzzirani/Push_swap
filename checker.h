@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 19:55:01 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 14:25:04 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 16:35:32 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,13 +92,15 @@ void		ft_lstadd_front(t_ls **lst, t_ls *new);
 t_ls		*ft_lstnew(int content);
 t_ls		*ft_lstlast(t_ls *lst);
 int			ft_lstsize(t_ls *lst);
+char		**free_strr(char **string);
 
 void		rrr(t_ls **stack_a, t_ls **stack_b);
 void		swap_a_swap_b(t_ls **stack_a, t_ls **stack_b);
 void		rotate_a_rotate_b(t_ls **head_a, t_ls **head_b);
-
-void		check_arg_in(char str);
-void		check_arg(char *arg);
-char		**free_str_error(char **string);
+void		sort_four_nbr(t_ls **head_a, t_ls **head_b, int ac);
+void		sort_five_nbr(t_ls **head_a, t_ls **head_b, int ac);
+t_ls		*sort_thre_nbr(t_ls **h);
+void		sort_four_nbr(t_ls **head_a, t_ls **head_b, int ac);
+void		sort_five_nbr(t_ls **head_a, t_ls **head_b, int ac);
 
 #endif

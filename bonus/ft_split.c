@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:49:20 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 13:47:48 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 15:38:49 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	count_nbr_case_in_tab(char const *s, char c)
 {
-	int			nbr;
-	int			i;
+	int				nbr;
+	int				i;
 
 	i = 0;
 	nbr = 0;
@@ -35,7 +35,7 @@ static int	count_nbr_case_in_tab(char const *s, char c)
 
 static void	free_tab(char **s)
 {
-	int			i;
+	int				i;
 
 	i = 0;
 	while (s[i])

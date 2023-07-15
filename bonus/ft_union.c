@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 22:06:39 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 13:48:24 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 15:38:07 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 void	sort_five_hundred(t_ls **head_a, t_ls **head_b, int ac)
 {
-	int			chunck;
-	int			moyenne;
+	int				chunck;
+	int				moyenne;
 
 	chunck = ac / 10;
 	moyenne = chunck / 2;
@@ -54,7 +54,7 @@ void	sort_five_hundred(t_ls **head_a, t_ls **head_b, int ac)
 
 int	ft_lstsize(t_ls *lst)
 {
-	int			i;
+	int				i;
 
 	if (!lst)
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 19:54:06 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 14:10:11 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 16:34:26 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	duplicate_sorted(t_ls *head)
 
 char	**free_strr(char **string)
 {
-	int			i;
+	int				i;
 
 	i = 0;
 	while (string[i])
@@ -73,11 +73,13 @@ t_ls	*check_parsing(char **av)
 	{
 		var.str = ft_split(av[var.i], ' ');
 		var.j = 0;
-		check_arg_in(var.str);
 		while (var.str[var.j])
 		{
 			if ((int)var.str[var.j] < 48 && (int)var.str[var.j] > 57)
-				free_str_error(var.str);
+			{
+				free_strr(var.str);
+				ft_error("Error\n");
+			}
 			add_number(&head, ft_atoi((char *)var.str[var.j]));
 			free(var.str[var.j]);
 			var.j++;

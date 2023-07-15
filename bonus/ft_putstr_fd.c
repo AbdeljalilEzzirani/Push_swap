@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 00:31:04 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 13:47:03 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 15:39:42 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int				i;
+	int			i;
 
 	i = 0;
 	while (s[i])
@@ -55,7 +55,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 char	*ft_strchr(const char *s, int c)
 {
-	int			i;
+	int				i;
 
 	if (s == NULL)
 		return (NULL);

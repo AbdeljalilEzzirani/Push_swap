@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 19:55:01 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/14 22:54:11 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 16:36:35 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 # include<unistd.h>
 # include<limits.h>
-# include<stdio.h>
 # include<stdlib.h>
 # include<limits.h>
 # include<stddef.h>
+# include <stddef.h>
 
 typedef struct s_ls
 {

@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 08:29:42 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 14:12:42 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 15:37:34 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	rotate_a_rotate_b(t_ls **head_a, t_ls **head_b)
 
 void	rotate_a(t_ls **head_a)
 {
-	t_ls		*tmp;
-	t_ls		*new_head_a;
+	t_ls			*tmp;
+	t_ls			*new_head_a;
 
 	if (!(*head_a) || !(*head_a)->next)
 		return ;
@@ -58,16 +58,4 @@ void	rotate_b(t_ls **head_b)
 		(*head_b) = (*head_b)->next;
 	}
 	(*head_b) = new_head_b;
-}
-
-void	push_b(t_ls **head_a, t_ls **head_b)
-{
-	t_ls			*tmp;
-
-	if (!(*head_a))
-		return ;
-	tmp = (*head_a);
-	(*head_a) = (*head_a)->next;
-	tmp->next = (*head_b);
-	(*head_b) = tmp;
 }

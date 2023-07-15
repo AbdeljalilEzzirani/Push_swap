@@ -6,11 +6,35 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 08:31:14 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 14:31:29 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 16:06:20 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
+
+void	push_a(t_ls **head_a, t_ls **head_b)
+{
+	t_ls			*tmp;
+
+	if (!(*head_b))
+		return ;
+	tmp = (*head_b);
+	(*head_b) = (*head_b)->next;
+	tmp->next = (*head_a);
+	(*head_a) = tmp;
+}
+
+void	push_b(t_ls **head_a, t_ls **head_b)
+{
+	t_ls			*tmp;
+
+	if (!(*head_a))
+		return ;
+	tmp = (*head_a);
+	(*head_a) = (*head_a)->next;
+	tmp->next = (*head_b);
+	(*head_b) = tmp;
+}
 
 t_ls	*algo_sort(t_ls **head_a, t_ls **head_b, int ac)
 {
@@ -27,52 +51,4 @@ t_ls	*algo_sort(t_ls **head_a, t_ls **head_b, int ac)
 	else if (ac <= 500)
 		sort_five_hundred(head_a, head_b, ac);
 	return ((*head_a));
-}
-
-char	**free_str_error(char **string)
-{
-	int			i;
-
-	i = 0;
-	while (string[i])
-	{
-		free(string[i]);
-		i++;
-	}
-	free(string);
-	ft_error("Error\n");
-	return (NULL);
-}
-
-void	check_arg(char *arg)
-{
-	if (ft_strlen(arg) > ft_strlen("+2147483647"))
-	{
-		write(1, "Error\n", 6);
-		exit(1);
-	}
-}
-
-void	check_arg_in(char str)
-{
-	int				i;
-
-	i = 0;
-	while (str[i])
-	{
-		check_arg(str[i]);
-		i++;
-	}
-}
-
-void	push_a(t_ls **head_a, t_ls **head_b)
-{
-	t_ls			*tmp;
-
-	if (!(*head_b))
-		return ;
-	tmp = (*head_b);
-	(*head_b) = (*head_b)->next;
-	tmp->next = (*head_a);
-	(*head_a) = tmp;
 }

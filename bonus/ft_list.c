@@ -6,7 +6,7 @@
 /*   By: abez-zir <abez-zir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 20:08:48 by abez-zir          #+#    #+#             */
-/*   Updated: 2023/07/15 13:45:55 by abez-zir         ###   ########.fr       */
+/*   Updated: 2023/07/15 15:40:17 by abez-zir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	add_number(t_ls **head, int num)
 
 t_ls	*ft_lstnew(int content)
 {
-	t_ls		*node;
+	t_ls			*node;
 
 	node = (t_ls *)malloc(sizeof(t_ls));
 	if (node == NULL)
